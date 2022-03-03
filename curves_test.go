@@ -1,8 +1,8 @@
 package brainpool_test
 
 import (
-	"../brainpool"
 	"crypto/elliptic"
+	"github.com/elamre/brainpool"
 	"math/big"
 	"testing"
 )
@@ -104,7 +104,6 @@ func testScalarBaseMult(curve elliptic.Curve, k, ex, ey *big.Int) bool {
 	x, y := curve.ScalarBaseMult(k.Bytes())
 	return x.Cmp(ex) == 0 && y.Cmp(ey) == 0
 }
-
 
 func TestScalarBaseMult(t *testing.T) {
 	three := big.NewInt(3)
